@@ -1,0 +1,57 @@
+{
+    "id": "/offlinereporting-rc",
+    "labels": {
+      "pod_label": "offlinereporting"
+    },
+    "environment": {
+      "POD_ENV": "pod"
+    },
+    "containers": [
+      {
+        "name": "webui",
+        "image": {
+          "kind": "DOCKER",
+          "id": "mhausenblas/tsdemo-offline-reporting-ui"
+        },
+
+ "exec": {
+        "command": {
+          "shell": "sleep 1000"
+        }
+      },
+        
+        "resources": {
+          "cpus": 0.7,
+          "mem": 100
+        },
+
+        "volumeMounts": [
+          {
+            "name": "tsdemo-data",
+            "mountPath": "/etc/nginx/html/data"
+          }
+        ],
+
+        "endpoints": [
+          {
+            "name": "httpendpoint",
+            "containerPort": 80,
+            "hostPort": 0,
+            "protocol": [
+              "tcp"
+            ]
+          }
+        ]
+
+      }
+    ],
+    "secrets": { 
+        
+    },
+    "volumes": [
+        {
+            "name": "tsdemo-data",
+            "secretName": "tsdemo-cred"
+        }
+    ]   
+  }

@@ -5,5 +5,5 @@
     "uris": ["https://s3-ap-northeast-1.amazonaws.com/hpe-iot-bucket/crime-data-producer-assembly-0.1.jar",
              "https://downloads.mesosphere.io/java/jre-7u76-linux-x64.tar.gz",
              "https://s3-ap-northeast-1.amazonaws.com/hpe-iot-bucket/crime-data-1000.csv"],
-    "cmd": "$(pwd)/jre*/bin/java -jar crime-data-producer-assembly-0.1.jar --brokers broker-0.kafka.mesos:9126 --topic topic1 --uri https://s3-ap-northeast-1.amazonaws.com/hpe-iot-bucket/crime-data-1000.csv"
+    "cmd": "$(pwd)/jre*/bin/java -jar crime-data-producer-assembly-0.1.jar --brokers broker-0.kafka.mesos:9511 --topic crime --uri https://s3-ap-northeast-1.amazonaws.com/hpe-iot-bucket/crime-data-1000.csv"
 }

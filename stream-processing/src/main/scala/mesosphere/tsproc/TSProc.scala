@@ -137,7 +137,7 @@ object TSProc {
       val inputStream = new FileInputStream("/tmp/offline-crime-data.json")
       val metadata = new ObjectMetadata()
       metadata.setContentType("application/json")
-      val request = new PutObjectRequest("mesosphere-tsdemo", "offline-crime-data.json", inputStream, metadata)
+      val request = new PutObjectRequest("hpe-iot-bucket", "offline-crime-data.json", inputStream, metadata)
       request.setCannedAcl(CannedAccessControlList.PublicRead);
       amazonS3Client.putObject(request)
 
